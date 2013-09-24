@@ -35,7 +35,7 @@
 This file contains the library used to create the source code for the plot.
 
 """
-import thea.cube_logic as cl
+import cube_logic as cl
 
 
 def generate_code(status, coord_indices):
@@ -325,7 +325,8 @@ def add_plot(code, cube, plot_method, plot_type, cmap, num_contours,
 
     else:
 
-        levels = cl.get_levels(cube, colorbar_max, colorbar_min, num_contours)
+        levels = cl.get_levels(cube, colorbar_max,
+                                       colorbar_min, num_contours)
         colors = None if cmap == "Automatic" else "'{}'".format(cmap)
 
         if plot_method == "using quickplot":

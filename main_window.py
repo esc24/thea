@@ -47,16 +47,15 @@ import matplotlib.pyplot as plt
 from PySide import QtGui, QtCore
 from PySide.QtGui import QApplication
 
-import thea.about_dialog as about_dialog
-import thea.colorbar_dialog as colorbar_dialog
-import thea.cube_logic as cl
-import thea.gui_logic as gl
-from thea.main_window_layout import Ui_MainWindow
-import thea.matplotlib_widget as matplotlib_widget
-import thea.source_code_dialog as source_code_dialog
-import thea.source_code_generator as source_code_generator
-import thea.table_model as table_model
-
+import about_dialog
+import colorbar_dialog
+import cube_logic as cl
+import gui_logic as gl
+from main_window_layout import Ui_MainWindow
+import matplotlib_widget
+import source_code_dialog
+import source_code_generator
+import table_model
 
 
 class MainWindow(QtGui.QMainWindow, Ui_MainWindow):

@@ -1,8 +1,12 @@
+SOURCES=about_dialog_layout.ui source_code_dialog_layout.ui colorbar_dialog_layout.ui main_window_layout.ui
+PY_SOURCES=$(SOURCES:.ui=.py)
+
 .PHONY: all clean
 
-all:
-	$(MAKE) -C lib/thea all
+all: $(PY_SOURCES)
 
 clean:
-	$(MAKE) -C lib/thea clean
-	rm -rf lib/thea/*.pyc
+	rm -f $(PY_SOURCES) $(PY_SOURCES:.py=.pyc)
+
+%.py: %.ui
+	pyside-uic $< > $@

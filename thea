@@ -1,5 +1,4 @@
-# -*- coding: iso-8859-1 -*-
-#
+#! /usr/bin/env python2.7
 # (C) British Crown Copyright 2013, Met Office
 # All rights reserved.
 #
@@ -32,23 +31,34 @@
 # This file is part of Thea.
 
 """
-This file contains the About Class
-
-This class is a simple dialog box containing information about the program
+This file controls how the program is called, initialtes a main even loop and
+call the main window.
 
 """
+import sys
+import warnings
+
 from PySide import QtGui
 
-from thea.about_dialog_layout import Ui_Dialog
+import main_window
 
 
-class About(QtGui.QDialog, Ui_Dialog):
-    """
-    This class is a dialog which contains information about the program.
+if __name__ == '__main__':
+    if len(sys.argv) > 2:
+        print 'Usage {} [FILENAME]'
+        sys.exit(1)
+    elif len(sys.argv) == 2:
+        filename = sys.argv[1]
+    else:
+        filename = None
 
-    The information shown here is on where to go for help, and on the lisence.
+    # For the purposes of running the program from the command line, we want to
+    # reduce the amount of data that is output to the terminal. We therefore
+    # ignore all warnings to stop them cluttering up the terminal.
+    # This line should be removed for debugging or development.
+    #warnings.filterwarnings("ignore")
 
-    """
-    def __init__(self):
-        super(About, self).__init__()
-        self.setupUi(self)
+    app = QtGui.QApplication(sys.argv)
+    frame = main_window.MainWindow(filename)
+    frame.show()
+    sys.exit(app.exec_())

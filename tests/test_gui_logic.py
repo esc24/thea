@@ -36,8 +36,8 @@ import unittest
 import numpy as np
 import iris
 
-import thea.gui_logic as gl
-import thea.tests.test_cube_logic as tcl
+import gui_logic as gl
+import tests.test_cube_logic as tcl
 
 
 def compare_dict(dictA, dictB):

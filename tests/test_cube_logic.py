@@ -39,7 +39,7 @@ import iris.quickplot as qplt
 import matplotlib.pyplot as plt
 import numpy as np
 
-import thea.cube_logic as cl
+import cube_logic as cl
 
 
 def setup_1d_cube():

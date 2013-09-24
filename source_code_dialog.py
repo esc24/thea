@@ -40,7 +40,7 @@ would generate the current image.
 """
 from PySide import QtGui
 
-from thea.source_code_dialog_layout import Ui_Dialog
+from source_code_dialog_layout import Ui_Dialog
 
 
 class Viewer(QtGui.QDialog, Ui_Dialog):

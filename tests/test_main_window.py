@@ -38,7 +38,7 @@ import unittest
 from PySide import QtGui
 import iris
 
-import thea.main_window as main_window
+import main_window
 
 
 class MainWindowTests(unittest.TestCase):
@@ -142,10 +142,9 @@ class MainWindowTests(unittest.TestCase):
         self.assertIsNone(missing)
 
 
-def main():
-    app = QtGui.QApplication(sys.argv)
-    unittest.main()
-    sys.exit(app.exec_())
+def setUpModule():
+    QtGui.QApplication(sys.argv)
+
 
 if __name__ == '__main__':
-    main()
+    unittest.main()

@@ -40,7 +40,7 @@ of the colorbar should be.
 """
 from PySide import QtGui
 
-from thea.colorbar_dialog_layout import Ui_ColorbarDialog
+from colorbar_dialog_layout import Ui_ColorbarDialog
 
 
 class ColorbarOptions(QtGui.QDialog, Ui_ColorbarDialog):

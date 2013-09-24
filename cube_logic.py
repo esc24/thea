@@ -43,7 +43,7 @@ import iris.quickplot as qplt
 import matplotlib.pyplot as plt
 import numpy as np
 
-from thea.gui_logic import get_dim_names
+from gui_logic import get_dim_names
 
 
 def update(status):

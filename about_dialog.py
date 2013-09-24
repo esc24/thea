@@ -32,45 +32,23 @@
 # This file is part of Thea.
 
 """
-This file controls how the program is called, initialtes a main even loop and
-call the main window.
+This file contains the About Class
+
+This class is a simple dialog box containing information about the program
 
 """
-import warnings
-# For the purposes of running the program from the command line, we want to
-# reduce the amount of data that is output to the terminal. We therefore ignore
-# all warnings to stop them cluttering up the terminal. Error messages will
-# still be shown. This line should be removed for debugging or development.
-warnings.filterwarnings("ignore")
-
-
-import os.path
-import sys
-
-# Ensures that the package is on the Python path.
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
 from PySide import QtGui
 
-import thea.main_window as main_window
+from about_dialog_layout import Ui_Dialog
 
 
-def main():
+class About(QtGui.QDialog, Ui_Dialog):
     """
-    The main method sets up a new QApplication object, which takes care of the
-    main event loop in Qt. It then chexks to see if the program has been called
-    with a file as an argument, and then opens a new main window for the
-    program.
+    This class is a dialog which contains information about the program.
+
+    The information shown here is on where to go for help, and on the lisence.
 
     """
-    app = QtGui.QApplication(sys.argv)
-    try:
-        _, filename = sys.argv
-    except ValueError:
-        filename = None
-    _ = main_window.MainWindow(filename)
-    sys.exit(app.exec_())
-
-
-if __name__ == '__main__':
-    main()
+    def __init__(self):
+        super(About, self).__init__()
+        self.setupUi(self)
