@@ -1,3 +1,5 @@
+.PHONY: all clean
+
 all:
 	$(MAKE) -C lib/thea all
 
